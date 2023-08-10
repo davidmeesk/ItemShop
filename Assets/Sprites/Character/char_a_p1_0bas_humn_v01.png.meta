@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1497,9 +1497,9 @@ TextureImporter:
       char_a_p1_0bas_humn_v01_12: -521023462
       char_a_p1_0bas_humn_v01_16: 226046335
       char_a_p1_0bas_humn_v01_30: 177822564
-      char_a_p1_0bas_humn_v01_10: 2016358645
-      char_a_p1_0bas_humn_v01_41: 1484569062
       char_a_p1_0bas_humn_v01_52: 1842420363
+      char_a_p1_0bas_humn_v01_41: 1484569062
+      char_a_p1_0bas_humn_v01_10: 2016358645
       char_a_p1_0bas_humn_v01_18: -1929115013
       char_a_p1_0bas_humn_v01_49: 1936804908
       char_a_p1_0bas_humn_v01_40: -1038213765

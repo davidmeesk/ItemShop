@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1458,7 +1458,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      char_a_p1_4har_bob1_v01_42: -1133549440
+      char_a_p1_4har_bob1_v01_8: 1201685060
       char_a_p1_4har_bob1_v01_16: -1570000835
       char_a_p1_4har_bob1_v01_21: -1998109169
       char_a_p1_4har_bob1_v01_50: 1605817995
@@ -1521,7 +1521,7 @@ TextureImporter:
       char_a_p1_4har_bob1_v01_7: 1363275111
       char_a_p1_4har_bob1_v01_39: 1170086406
       char_a_p1_4har_bob1_v01_18: 1754013859
-      char_a_p1_4har_bob1_v01_8: 1201685060
+      char_a_p1_4har_bob1_v01_42: -1133549440
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1483,12 +1483,12 @@ TextureImporter:
       char_a_p1_5hat_pfht_v04_57: 1757818263
       char_a_p1_5hat_pfht_v04_49: -1525118099
       char_a_p1_5hat_pfht_v04_25: 1048497002
-      char_a_p1_5hat_pfht_v04_18: -351951092
+      char_a_p1_5hat_pfht_v04_3: 1838355279
       char_a_p1_5hat_pfht_v04_41: -1483773661
+      char_a_p1_5hat_pfht_v04_18: -351951092
       char_a_p1_5hat_pfht_v04_31: 1089932249
       char_a_p1_5hat_pfht_v04_22: 632648973
       char_a_p1_5hat_pfht_v04_38: 1513458616
-      char_a_p1_5hat_pfht_v04_3: 1838355279
       char_a_p1_5hat_pfht_v04_15: -1890967595
       char_a_p1_5hat_pfht_v04_62: 11495715
       char_a_p1_5hat_pfht_v04_43: -250191697
