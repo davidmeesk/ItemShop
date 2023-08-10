@@ -7,11 +7,21 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public float movementSpeed = 200f;
 
-    Vector2 moveDirection = Vector2.zero;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public delegate void StartedMoving(Vector2 direction);
+    private event StartedMoving startedMoving;
 
+    Vector2 moveDirection = Vector2.zero;
+
+    void OnEnable()
+    {
+        CharacterAnimator animator = GetComponent<CharacterAnimator>();
+        startedMoving += animator.SetMovementAnimation;
+    }
+
+    void OnDisable()
+    {
+        CharacterAnimator animator = GetComponent<CharacterAnimator>();
+        startedMoving -= animator.SetMovementAnimation;
     }
 
     // Update is called once per frame
@@ -21,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         float moveY = Input.GetAxis("Vertical");
 
         moveDirection = new Vector2(moveX, moveY).normalized;
+        startedMoving.Invoke(moveDirection);
     }
 
     private void FixedUpdate()
