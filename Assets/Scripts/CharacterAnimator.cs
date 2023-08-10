@@ -11,7 +11,7 @@ public class CharacterAnimator : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            animators[1].runtimeAnimatorController = hatAnimations[0];
+            animators[1].runtimeAnimatorController = hatAnimations[1];
 
             foreach (Animator animator in animators)
             {
