@@ -18,6 +18,16 @@ public class ClothingShop : MonoBehaviour
         
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        PlayerInput playerInput = collision.GetComponent<PlayerInput>();
+        if (playerInput != null)
+        {
+            playerInput.interactAction -= OpenShop;
+        }
+
+    }
+
     private void OpenShop()
     {
         shopPanel.SetActive(true);
