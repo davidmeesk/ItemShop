@@ -8,21 +8,19 @@ public class CharacterAnimator : MonoBehaviour
     public RuntimeAnimatorController[] hatAnimations;
     public RuntimeAnimatorController[] clothingAnimations;
 
-    private void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            animators[1].runtimeAnimatorController = hatAnimations[Random.Range(0, hatAnimations.Length)];
-            animators[2].runtimeAnimatorController = clothingAnimations[Random.Range(0, clothingAnimations.Length)];
-
-            foreach (Animator animator in animators)
-            {
-                animator.Play("Idle Down");
-            }
-        }
+        PlayerInput playerInput = GetComponent<PlayerInput>();
+        playerInput.startedMoving += SetMovementAnimation;
     }
 
-    public void SetMovementAnimation(Vector2 direction)
+    private void OnDisable()
+    {
+        PlayerInput playerInput = GetComponent<PlayerInput>();
+        playerInput.startedMoving -= SetMovementAnimation;
+    }
+
+    private void SetMovementAnimation(Vector2 direction)
     {
         foreach (Animator animator in animators)
         {
@@ -35,5 +33,13 @@ public class CharacterAnimator : MonoBehaviour
             }
         }
 
+    }
+
+    private void ResetAnimation()
+    {
+        foreach (Animator animator in animators)
+        {
+            animator.Play("Idle Down");
+        }
     }
 }
