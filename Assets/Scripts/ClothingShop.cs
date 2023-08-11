@@ -23,8 +23,8 @@ public class ClothingShop : MonoBehaviour
     public delegate void UpdateUI(ClothingData[] clothingData);
     public event UpdateUI updateShopUI;
 
-    public delegate void UpdateFunds(float playerFunds);
-    public event UpdateFunds updateFunds;
+    public delegate void PurchaseItem(int itemIndex, float playerFunds);
+    public event PurchaseItem purchaseItem;
 
     public delegate void SellItemByName(string itemName, float price);
     public event SellItemByName sellItemByName;
@@ -35,7 +35,7 @@ public class ClothingShop : MonoBehaviour
         updateShopUI += clothingShopUI.UpdateUI;
         updateShopUI.Invoke(shopData);
 
-        updateFunds += clothingShopUI.UpdateFunds;
+        purchaseItem += clothingShopUI.PurchaseItem;
 
     }
 
@@ -52,7 +52,7 @@ public class ClothingShop : MonoBehaviour
         if (playerInventory != null)
         {
             sellItemByName += playerInventory.PurchaseItem;
-            playerInventory.updateFunds += UpdatePlayerFunds;
+            playerInventory.purchasedItem += PurchasedItem;
         }
 
 
@@ -71,7 +71,7 @@ public class ClothingShop : MonoBehaviour
         if (playerInventory != null)
         {
             sellItemByName -= playerInventory.PurchaseItem;
-            playerInventory.updateFunds -= UpdatePlayerFunds;
+            playerInventory.purchasedItem -= PurchasedItem;
         }
     }
 
@@ -86,9 +86,17 @@ public class ClothingShop : MonoBehaviour
         sellItemByName.Invoke(shopData[itemIndex].clothingName, shopData[itemIndex].price);
     }
 
-    private void UpdatePlayerFunds(float funds)
+    private void PurchasedItem(string itemName, float funds)
     {
-        updateFunds.Invoke(funds);
+        for(int clothingIndex = 0; clothingIndex< shopData.Length; clothingIndex++)
+        {
+            if (shopData[clothingIndex].clothingName == itemName)
+            {
+                shopData[clothingIndex].purchased = true;
+                purchaseItem.Invoke(clothingIndex, funds);
+            }
+        }
+        
     }
 
 }

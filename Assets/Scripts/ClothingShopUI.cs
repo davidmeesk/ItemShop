@@ -31,8 +31,10 @@ public class ClothingShopUI : MonoBehaviour
         }
     }
 
-    internal void UpdateFunds(float playerFunds)
+    internal void PurchaseItem(int itemIndex, float playerFunds)
     {
         fundsIndicator.text = playerFunds.ToString() + " G";
+        clothing[itemIndex].price.text = "Purchased!";
+        clothing[itemIndex].purchased = true;
     }
 }

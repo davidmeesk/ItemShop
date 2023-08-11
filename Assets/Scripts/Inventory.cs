@@ -10,8 +10,8 @@ public class Inventory : MonoBehaviour
     public delegate void EquipClothing(RuntimeAnimatorController animations);
     public event EquipClothing equipClothes, equipHat;
 
-    public delegate void UpdateFunds(float funds);
-    public event UpdateFunds updateFunds;
+    public delegate void PurchasedItem(string itemName, float funds);
+    public event PurchasedItem purchasedItem;
 
     public enum ClothingType
     {
@@ -41,24 +41,29 @@ public class Inventory : MonoBehaviour
     {
         if(itemPrice <= funds)
         {
-            foreach (ClothingItem item in items)
+            for (int clothingIndex =0; clothingIndex< items.Length; clothingIndex++ )
             {
+                ClothingItem item = items[clothingIndex];
                 if(item.name == itemName)
                 {
                     if (!item.owned)
                     {
                         funds -= itemPrice;
-                        switch (item.clothingType)
-                        {
-                            case ClothingType.Body:
-                                equipClothes(item.animations);
-                                break;
-                            case ClothingType.Hat:
-                                equipHat(item.animations);
-                                break;
-                        }
-                        updateFunds.Invoke(funds);
+                        purchasedItem.Invoke(itemName, funds);
                     }
+                    switch (item.clothingType)
+                    {
+                        case ClothingType.Body:
+                            equipClothes(item.animations);
+                            break;
+                        case ClothingType.Hat:
+                            equipHat(item.animations);
+                            break;
+                    }
+                    
+                    items[clothingIndex].owned = true;
+
+
                 }
             }
         }
