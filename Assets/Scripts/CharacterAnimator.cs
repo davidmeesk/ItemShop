@@ -11,7 +11,7 @@ public class CharacterAnimator : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            animators[1].runtimeAnimatorController = hatAnimations[1];
+            animators[1].runtimeAnimatorController = hatAnimations[Random.Range(0, hatAnimations.Length)];
 
             foreach (Animator animator in animators)
             {
