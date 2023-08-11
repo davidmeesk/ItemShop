@@ -14,8 +14,11 @@ public class ClothingShopUI : MonoBehaviour
         public TMP_Text clothingName;
         public TMP_Text price;
         public bool purchased;
+
     }
     public ClothingInfo[] clothing;
+
+    public TMP_Text fundsIndicator;
 
     internal void UpdateUI(ClothingShop.ClothingData[] clothingData)
     {
@@ -26,5 +29,10 @@ public class ClothingShopUI : MonoBehaviour
             clothing[clothingIndex].price.text = clothingData[clothingIndex].price.ToString();
             clothing[clothingIndex].purchased = clothingData[clothingIndex].purchased;
         }
+    }
+
+    internal void UpdateFunds(float playerFunds)
+    {
+        fundsIndicator.text = playerFunds.ToString() + " G";
     }
 }

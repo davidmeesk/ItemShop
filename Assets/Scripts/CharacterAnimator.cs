@@ -5,8 +5,6 @@ using UnityEngine;
 public class CharacterAnimator : MonoBehaviour
 {
     public Animator[] animators;
-    public RuntimeAnimatorController[] hatAnimations;
-    public RuntimeAnimatorController[] clothingAnimations;
 
     private void OnEnable()
     {
@@ -39,7 +37,20 @@ public class CharacterAnimator : MonoBehaviour
     {
         foreach (Animator animator in animators)
         {
-            animator.Play("Idle Down");
+            if(animator.runtimeAnimatorController != null)
+                animator.Play("Idle Down");
         }
+    }
+
+    public void EquipClothing(RuntimeAnimatorController clothingAnimator)
+    {
+        animators[2].runtimeAnimatorController = clothingAnimator;
+        ResetAnimation();
+    }
+
+    public void EquipHat(RuntimeAnimatorController hatAnimator)
+    {
+        animators[1].runtimeAnimatorController = hatAnimator;
+        ResetAnimation();
     }
 }

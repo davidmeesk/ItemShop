@@ -166,7 +166,7 @@ Animator:
   m_GameObject: {fileID: 33619124}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8aaafbbb3d6ab14eb695b0e7ae4eef1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1656,6 +1656,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   funds: 1000
+  items:
+  - name: Peasant Cap
+    animations: {fileID: 9100000, guid: 30d4bbe2f1c8caf46981914b100c5edc, type: 2}
+    clothingType: 0
+    owned: 0
+  - name: Pointy Hat
+    animations: {fileID: 9100000, guid: dbe2a5389a1166d4d9d60e8468a84a76, type: 2}
+    clothingType: 0
+    owned: 0
+  - name: Farmer Clothes
+    animations: {fileID: 9100000, guid: d3c1d9249fc332947b1deaf883ba12de, type: 2}
+    clothingType: 1
+    owned: 0
+  - name: Forester Clothes
+    animations: {fileID: 9100000, guid: 629627f65339f394595dec0559595ae8, type: 2}
+    clothingType: 1
+    owned: 0
 --- !u!114 &1170074234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1825,6 +1842,7 @@ MonoBehaviour:
     clothingName: {fileID: 1524893571}
     price: {fileID: 1841123330}
     purchased: 0
+  fundsIndicator: {fileID: 1164718554}
 --- !u!1 &1430087325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,6 +2026,38 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -8736090991436846588, guid: bc953fcc9de18cf489229e8ad15877e8, type: 2}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 288118675}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SellItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ClothingShop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2026,7 +2076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2034,7 +2084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2074,7 +2124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 409.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2591,6 +2641,38 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -8736090991436846588, guid: bc953fcc9de18cf489229e8ad15877e8, type: 2}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 288118675}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SellItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ClothingShop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2609,7 +2691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2617,7 +2699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2657,7 +2739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 409.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2928,6 +3010,38 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -8736090991436846588, guid: bc953fcc9de18cf489229e8ad15877e8, type: 2}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 288118675}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SellItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ClothingShop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2946,7 +3060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2954,7 +3068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2994,7 +3108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 409.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3225,6 +3339,38 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -8736090991436846588, guid: bc953fcc9de18cf489229e8ad15877e8, type: 2}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 288118675}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SellItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ClothingShop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849252945448893793, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3243,7 +3389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -3251,7 +3397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3291,11 +3437,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 409.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -53.145
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5849252945448893798, guid: e0f76e9ad1b936e4f8d8949dca9aaa5c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
