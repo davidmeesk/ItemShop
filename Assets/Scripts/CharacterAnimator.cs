@@ -6,12 +6,14 @@ public class CharacterAnimator : MonoBehaviour
 {
     public Animator[] animators;
     public RuntimeAnimatorController[] hatAnimations;
+    public RuntimeAnimatorController[] clothingAnimations;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             animators[1].runtimeAnimatorController = hatAnimations[Random.Range(0, hatAnimations.Length)];
+            animators[2].runtimeAnimatorController = clothingAnimations[Random.Range(0, clothingAnimations.Length)];
 
             foreach (Animator animator in animators)
             {
