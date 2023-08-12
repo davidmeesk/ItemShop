@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject pauseMenu;
 
     public delegate void StartedMoving(Vector2 direction);
     public event StartedMoving startedMoving;
@@ -18,6 +20,8 @@ public class PlayerInput : MonoBehaviour
         HandleMovementInput();
 
         HandleInteractInput();
+
+        HandlePauseInput();
     }
 
     private void HandleMovementInput()
@@ -35,6 +39,14 @@ public class PlayerInput : MonoBehaviour
         {
             if(interactAction != null)
                 interactAction.Invoke();
+        }
+    }
+
+    private void HandlePauseInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(true);
         }
     }
 }
