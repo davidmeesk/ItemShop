@@ -29,6 +29,9 @@ public class ClothingShop : MonoBehaviour
     public delegate void SellItemByName(string itemName, float price);
     public event SellItemByName sellItemByName;
 
+    public delegate void CanPlayerWalk();
+    public event CanPlayerWalk disableWalking, enableWalking;
+
     private void Start()
     {
         ClothingShopUI clothingShopUI = shopPanel.GetComponent<ClothingShopUI>();
@@ -43,9 +46,12 @@ public class ClothingShop : MonoBehaviour
     {
         //Let the player open the shop menu with the interact button when they enter the trigger
         PlayerInput playerInput = collision.GetComponent<PlayerInput>();
-        if (playerInput != null)
+        if (playerInput != null) {
             playerInput.interactAction += OpenShop;
-        
+            disableWalking += playerInput.DisableWalking;
+            enableWalking += playerInput.EnableWalking;
+        }
+
 
         //Link the player's inventory to the shop while they are in the trigger
         Inventory playerInventory = collision.GetComponent<Inventory>();
@@ -64,7 +70,11 @@ public class ClothingShop : MonoBehaviour
         //Don't let the player open the shop menu when they leave the trigger
         PlayerInput playerInput = collision.GetComponent<PlayerInput>();
         if (playerInput != null)
+        {
             playerInput.interactAction -= OpenShop;
+            disableWalking += playerInput.DisableWalking;
+            enableWalking += playerInput.EnableWalking;
+        }
 
         //Remove the link from player's inventory to the shop when they leave the trigger
         Inventory playerInventory = collision.GetComponent<Inventory>();
@@ -77,6 +87,7 @@ public class ClothingShop : MonoBehaviour
 
     private void OpenShop()
     {
+        disableWalking.Invoke();
         shopPanel.SetActive(true);
     }
 

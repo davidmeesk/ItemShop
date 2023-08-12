@@ -7,6 +7,7 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField]
     private GameObject pauseMenu;
+    private int blockingPanels = 0;
 
     public delegate void StartedMoving(Vector2 direction);
     public event StartedMoving startedMoving;
@@ -26,11 +27,18 @@ public class PlayerInput : MonoBehaviour
 
     private void HandleMovementInput()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
+        if (blockingPanels == 0)
+        {
+            float moveX = Input.GetAxis("Horizontal");
+            float moveY = Input.GetAxis("Vertical");
 
-        Vector2 moveDirection = new Vector2(moveX, moveY).normalized;
-        startedMoving.Invoke(moveDirection);
+            Vector2 moveDirection = new Vector2(moveX, moveY).normalized;
+            startedMoving.Invoke(moveDirection);
+        }
+        else
+        {
+            startedMoving.Invoke(Vector2.zero);
+        }
     }
 
     private void HandleInteractInput()
@@ -46,7 +54,26 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseMenu.SetActive(true);
+            if (!pauseMenu.activeInHierarchy)
+            {
+                DisableWalking();
+                pauseMenu.SetActive(true);
+            }
+            else
+            {
+                EnableWalking();
+                pauseMenu.SetActive(false);
+            }
         }
+    }
+
+    internal void DisableWalking()
+    {
+        blockingPanels++;
+    }
+
+    public void EnableWalking()
+    {
+        blockingPanels--;
     }
 }
